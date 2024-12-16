@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import CoreData
 
 class ChatController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     // Reference to Imanaged object context
@@ -20,12 +21,36 @@ class ChatController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        fetchUsers()
+    }
+    
+    func fetchUsers() {
+        // Fetch the data from Core Data to display in the tableview
+        do {
+            
+            let request = User.fetchRequest() as NSFetchRequest<User>
+            
+            self.items = try context.fetch(request)
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+            
+        } catch {
+            
+        }
     }
     
     @IBAction func addTapped(_ sender: Any) {
         // Create Alert
         let alert = UIAlertController(title: "Add Person", message: "What is their name?", preferredStyle: .alert)
-        alert.addTextField()
+        alert.addTextField { textField in
+            textField.placeholder = "Enter Username"
+        }
         
         // Configure button handler
         let submitButton = UIAlertAction(title: "Add", style: .default) { (action) in
@@ -36,6 +61,7 @@ class ChatController: UIViewController {
             // TODO: Create a person object
             let newUser = User(context: self.context)
             newUser.name = textField.text
+//            newUser.id =
             
             // TODO: Save the data
             do {
@@ -45,7 +71,7 @@ class ChatController: UIViewController {
             }
             
             // TODO: Re-fetch the data
-            self.fetchPeople()
+            self.fetchUsers()
         }
         
         // Add button
@@ -57,14 +83,19 @@ class ChatController: UIViewController {
     
 }
 
-
-
 extension ChatController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.items?.count ?? 0
+//        return self.items?.count ?? 0
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.Identifiers.chatCellIdentifier, for: indexPath) as? ChatCell
+        cell?.nameLabel.text = "Hello"
+        return cell ?? UITableViewCell()
     }
+}
+
+extension ChatController: UITableViewDelegate {
+    
 }
