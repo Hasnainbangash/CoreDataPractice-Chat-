@@ -69,7 +69,6 @@ class MessageController: UIViewController {
             messageTextField.text = ""
         }
     }
-    
 }
 
 extension MessageController: UITableViewDataSource {
