@@ -64,6 +64,12 @@ class ChatController: UIViewController {
             newUser.name = textField?.text
             newUser.id = UUID()
             
+            let message = Message(context: self.context)
+            message.userId = newUser.id
+            
+            newUser.addToMessage(message)
+            
+            
             // TODO: Save the data
             PersistentStorage.shared.saveContext()
             

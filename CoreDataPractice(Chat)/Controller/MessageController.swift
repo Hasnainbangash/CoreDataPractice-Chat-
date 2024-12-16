@@ -65,6 +65,8 @@ class MessageController: UIViewController {
             PersistentStorage.shared.saveContext()
             
             fetchMessages()
+            
+            messageTextField.text = ""
         }
     }
     
