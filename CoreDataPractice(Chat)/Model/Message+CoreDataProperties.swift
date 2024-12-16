@@ -18,6 +18,7 @@ extension Message {
 
     @NSManaged public var id: UUID?
     @NSManaged public var messages: String?
+    @NSManaged public var userId: UUID?
     @NSManaged public var user: User?
 
 }

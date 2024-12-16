@@ -3,6 +3,7 @@
     <entity name="Message" representedClassName="Message" syncable="YES">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="messages" optional="YES" attributeType="String"/>
+        <attribute name="userId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="message" inverseEntity="User"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES">
