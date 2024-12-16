@@ -21,14 +21,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ChatReuseableCell" id="mg7-nC-zmB" customClass="ChatCell" customModule="CoreDataPractice_Chat_" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="48.333332061767578"/>
+                                        <rect key="frame" x="0.0" y="50" width="393" height="49"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mg7-nC-zmB" id="jg6-Ri-fRd">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="48.333332061767578"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpE-PH-rvK">
-                                                    <rect key="frame" x="20" y="14.000000000000002" width="45" height="20.666666666666671"/>
+                                                    <rect key="frame" x="20" y="13.999999999999998" width="45" height="21.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -119,7 +119,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="nIp-8G-jlZ">
                                         <rect key="frame" x="0.0" y="681" width="393" height="34"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BSh-UN-5JM">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Message" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BSh-UN-5JM">
                                                 <rect key="frame" x="0.0" y="0.0" width="328" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="328" id="SdU-N0-coB"/>
