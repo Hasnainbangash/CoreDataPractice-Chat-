@@ -138,6 +138,9 @@
                                                 <buttonConfiguration key="configuration" style="plain" image="paperplane.fill" catalog="system">
                                                     <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="sendButton:" destination="fXb-GS-DE9" eventType="touchUpInside" id="8qF-eK-hbj"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -154,6 +157,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Messages" id="ido-rM-eh8"/>
+                    <connections>
+                        <outlet property="messageTextField" destination="BSh-UN-5JM" id="ha0-YL-eXZ"/>
+                        <outlet property="tableView" destination="b66-gi-mJS" id="uwA-e4-yCx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ma7-Bf-fqP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

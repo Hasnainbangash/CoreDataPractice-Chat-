@@ -103,15 +103,22 @@ extension ChatController: UITableViewDataSource {
 
 extension ChatController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let user = items?[indexPath.row]
-        performSegue(withIdentifier: K.Segues.chatToMessageSegue, sender: self)
-        
-        // Deselect the row after selecting it
+        let user = self.items?[indexPath.row]
+        performSegue(withIdentifier: K.Segues.chatToMessageSegue, sender: user)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == K.Segues.chatToMessageSegue {
+            if let destinationVC = segue.destination as? MessageController,
+               let selectedUser = sender as? User {
+                destinationVC.userID = selectedUser.id
+            }
+        }
+    }
+    
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-
+        
         let action = UIContextualAction(style: .destructive, title: "Delete") { action, view, completionHandler in
             
             // TODO: Which person to remove
